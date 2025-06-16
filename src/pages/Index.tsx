@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SplashCursor } from "@/components/ui/splash-cursor";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import GameCard from "@/components/GameCard";
@@ -44,7 +45,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 relative">
+      <SplashCursor />
       <Navigation />
 
       <main className="pt-20 pb-8">
