@@ -15,6 +15,8 @@ const GameCard = ({ game }: GameCardProps) => {
   const handleGameClick = () => {
     if (game.id === 1) {
       navigate("/rainbow-game");
+    } else if (game.id === 2) {
+      navigate("/smile-counter");
     }
   };
 
