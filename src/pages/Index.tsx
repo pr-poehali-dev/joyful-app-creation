@@ -43,6 +43,46 @@ const Index = () => {
       isNew: false,
       giftWrapping: true,
     },
+    {
+      id: 4,
+      name: "Apple Gift Card 1000₽",
+      price: "1 000 ₽",
+      originalPrice: null,
+      image:
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop",
+      isNew: false,
+      giftWrapping: false,
+    },
+    {
+      id: 5,
+      name: "Apple Gift Card 3000₽",
+      price: "3 000 ₽",
+      originalPrice: null,
+      image:
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop",
+      isNew: false,
+      giftWrapping: false,
+    },
+    {
+      id: 6,
+      name: "Apple Gift Card 5000₽",
+      price: "5 000 ₽",
+      originalPrice: null,
+      image:
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop",
+      isNew: true,
+      giftWrapping: false,
+    },
+    {
+      id: 7,
+      name: "Apple Gift Card 10000₽",
+      price: "10 000 ₽",
+      originalPrice: null,
+      image:
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop",
+      isNew: false,
+      giftWrapping: false,
+    },
   ];
 
   const giftCollections = [
