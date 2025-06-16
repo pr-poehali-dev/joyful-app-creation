@@ -2,99 +2,121 @@ import { useState } from "react";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import GameCard from "@/components/GameCard";
-import AchievementBadge from "@/components/AchievementBadge";
-import ChallengeCard from "@/components/ChallengeCard";
-import GalleryPreview from "@/components/GalleryPreview";
+import ProductCard from "@/components/ProductCard";
+import GiftCard from "@/components/GiftCard";
+import ProductGallery from "@/components/ProductGallery";
+import PromoTag from "@/components/PromoTag";
 
 const Index = () => {
-  const [mood, setMood] = useState("😊");
+  const [selectedCategory, setSelectedCategory] = useState("featured");
 
-  const quickGames = [
+  const featuredProducts = [
     {
       id: 1,
-      title: "Поймай радугу",
-      icon: "🌈",
-      color: "from-pink-400 to-purple-500",
+      name: "iPhone 15 Pro",
+      price: "119 990 ₽",
+      originalPrice: "129 990 ₽",
+      image:
+        "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop",
+      isNew: true,
+      giftWrapping: true,
     },
     {
       id: 2,
-      title: "Счётчик улыбок",
-      icon: "😄",
-      color: "from-yellow-400 to-orange-500",
+      name: "AirPods Pro",
+      price: "24 990 ₽",
+      originalPrice: "29 990 ₽",
+      image:
+        "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=400&h=400&fit=crop",
+      isNew: false,
+      giftWrapping: true,
     },
     {
       id: 3,
-      title: "Дождь комплиментов",
-      icon: "✨",
-      color: "from-green-400 to-blue-500",
+      name: "iPad Air",
+      price: "64 990 ₽",
+      originalPrice: "74 990 ₽",
+      image:
+        "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=400&fit=crop",
+      isNew: false,
+      giftWrapping: true,
     },
   ];
 
-  const todayAchievements = [
-    { id: 1, title: "Утренняя улыбка", icon: "🌅", unlocked: true },
-    { id: 2, title: "Добрый поступок", icon: "💝", unlocked: false },
-    { id: 3, title: "Позитивная мысль", icon: "🌟", unlocked: true },
+  const giftCollections = [
+    {
+      id: 1,
+      title: "Для творчества",
+      description: "MacBook + iPad + Apple Pencil",
+      price: "от 149 990 ₽",
+      image:
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=300&fit=crop",
+      discount: "15%",
+    },
+    {
+      id: 2,
+      title: "Музыкальный набор",
+      description: "AirPods Max + HomePod mini",
+      price: "от 69 990 ₽",
+      image:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop",
+      discount: "20%",
+    },
   ];
 
-  const dailyChallenge = {
-    title: "Сделай 3 комплимента",
-    progress: 1,
-    total: 3,
-    icon: "💬",
-  };
+  const promoOffers = [
+    { text: "Скидки до 30%", color: "red" },
+    { text: "Бесплатная упаковка", color: "green" },
+    { text: "Доставка 31 декабря", color: "blue" },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 relative">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative">
       <SplashCursor />
       <Navigation />
 
       <main className="pt-20 pb-8">
-        <HeroSection mood={mood} setMood={setMood} />
+        <HeroSection />
 
-        {/* Quick Games Section */}
-        <section className="px-6 py-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Быстрые игры для настроения 🎮
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {quickGames.map((game) => (
-              <GameCard key={game.id} game={game} />
+        {/* Promo Tags */}
+        <section className="px-6 py-4">
+          <div className="flex justify-center gap-4 flex-wrap max-w-4xl mx-auto">
+            {promoOffers.map((promo, index) => (
+              <PromoTag key={index} text={promo.text} color={promo.color} />
             ))}
           </div>
         </section>
 
-        {/* Today's Challenge */}
-        <section className="px-6 py-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Вызов дня 🎯
+        {/* Featured Products */}
+        <section className="px-6 py-12">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+            🎁 Лучшие подарки к Новому году
           </h2>
-          <div className="max-w-md mx-auto">
-            <ChallengeCard challenge={dailyChallenge} />
-          </div>
-        </section>
-
-        {/* Achievements Preview */}
-        <section className="px-6 py-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Твои достижения 🏆
-          </h2>
-          <div className="flex justify-center gap-4 flex-wrap max-w-md mx-auto">
-            {todayAchievements.map((achievement) => (
-              <AchievementBadge
-                key={achievement.id}
-                achievement={achievement}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>
 
-        {/* Gallery Preview */}
-        <section className="px-6 py-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Галерея вдохновения 🖼️
+        {/* Gift Collections */}
+        <section className="px-6 py-12 bg-white/50">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+            ✨ Готовые подарочные наборы
           </h2>
-          <GalleryPreview />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {giftCollections.map((collection) => (
+              <GiftCard key={collection.id} collection={collection} />
+            ))}
+          </div>
+        </section>
+
+        {/* Product Gallery */}
+        <section className="px-6 py-12">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+            🎄 Новогоднее вдохновение от Apple
+          </h2>
+          <ProductGallery />
         </section>
       </main>
     </div>
