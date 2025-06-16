@@ -11,6 +11,7 @@ interface Product {
   image: string;
   isNew: boolean;
   giftWrapping: boolean;
+  isGiftCard?: boolean;
 }
 
 interface ProductCarouselProps {
