@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface GameCardProps {
   game: {
     id: number;
@@ -8,8 +10,17 @@ interface GameCardProps {
 }
 
 const GameCard = ({ game }: GameCardProps) => {
+  const navigate = useNavigate();
+
+  const handleGameClick = () => {
+    if (game.id === 1) {
+      navigate("/rainbow-game");
+    }
+  };
+
   return (
     <div
+      onClick={handleGameClick}
       className={`bg-gradient-to-br ${game.color} rounded-2xl p-6 text-white shadow-xl hover-scale cursor-pointer transition-all duration-300 group`}
     >
       <div className="text-center">
