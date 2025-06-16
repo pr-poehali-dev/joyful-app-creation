@@ -10,7 +10,7 @@ const HeroSection = ({ mood, setMood }: HeroSectionProps) => {
     <section className="text-center py-12 px-6">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent animate-fade-in">
-          Твой мир счастья начинается здесь! {mood}
+          Твой мир счастья начинается здесь!{mood && ` ${mood}`}
         </h1>
 
         <p className="text-xl text-gray-600 mb-8 animate-fade-in">
