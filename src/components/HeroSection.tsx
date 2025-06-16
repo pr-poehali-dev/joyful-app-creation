@@ -1,10 +1,9 @@
-
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Background with holiday pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:60px_60px] opacity-20"></div>
       </div>
 
       <div className="relative z-10 text-center py-20 px-6">
@@ -58,8 +57,12 @@ const HeroSection = () => {
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 text-4xl animate-bounce">❄️</div>
       <div className="absolute top-40 right-10 text-3xl animate-pulse">⭐</div>
-      <div className="absolute bottom-20 left-20 text-2xl animate-bounce delay-300">🎄</div>
-      <div className="absolute bottom-32 right-16 text-3xl animate-pulse delay-500">✨</div>
+      <div className="absolute bottom-20 left-20 text-2xl animate-bounce delay-300">
+        🎄
+      </div>
+      <div className="absolute bottom-32 right-16 text-3xl animate-pulse delay-500">
+        ✨
+      </div>
     </section>
   );
 };
