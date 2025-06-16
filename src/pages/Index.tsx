@@ -1,10 +1,12 @@
 import { useState } from "react";
+import Icon from "@/components/ui/icon";
+import ProductCard from "@/components/ProductCard";
+import ProductCarousel from "@/components/ProductCarousel";
+import GiftCard from "@/components/GiftCard";
+import ProductGallery from "@/components/ProductGallery";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import ProductCard from "@/components/ProductCard";
-import GiftCard from "@/components/GiftCard";
-import ProductGallery from "@/components/ProductGallery";
 import PromoTag from "@/components/PromoTag";
 
 const Index = () => {
@@ -92,10 +94,8 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             🎁 Лучшие подарки к Новому году
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <ProductCarousel products={featuredProducts} />
           </div>
         </section>
 
@@ -104,10 +104,20 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             ✨ Готовые подарочные наборы
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {giftCollections.map((collection) => (
-              <GiftCard key={collection.id} collection={collection} />
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <ProductCarousel
+              products={giftCollections.map((collection) => ({
+                id: collection.id,
+                name: collection.title,
+                price: collection.price,
+                originalPrice: "",
+                image: collection.image,
+                isNew: false,
+                giftWrapping: true,
+                description: collection.description,
+                discount: collection.discount,
+              }))}
+            />
           </div>
         </section>
 
