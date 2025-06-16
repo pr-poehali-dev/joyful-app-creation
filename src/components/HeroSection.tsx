@@ -29,7 +29,7 @@ const HeroSection = ({ mood, setMood }: HeroSectionProps) => {
                 onClick={() => setMood(moodEmoji)}
                 className={`text-3xl p-3 rounded-full transition-all duration-200 hover-scale ${
                   mood === moodEmoji
-                    ? "bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg scale-110"
+                    ? "bg-white shadow-xl scale-110 ring-4 ring-purple-500/50"
                     : "bg-white/50 hover:bg-white/80 shadow-md"
                 }`}
               >
