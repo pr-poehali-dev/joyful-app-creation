@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Games from "./pages/Games";
 import RainbowGame from "@/pages/RainbowGame";
 import SmileCounter from "@/pages/SmileCounter";
+import ComplimentRain from "@/pages/ComplimentRain";
 import Achievements from "./pages/Achievements";
 import Challenges from "./pages/Challenges";
 import Gallery from "./pages/Gallery";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/games" element={<Games />} />
           <Route path="/rainbow-game" element={<RainbowGame />} />
           <Route path="/smile-counter" element={<SmileCounter />} />
+          <Route path="/compliment-rain" element={<ComplimentRain />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/challenges" element={<Challenges />} />
           <Route path="/gallery" element={<Gallery />} />
